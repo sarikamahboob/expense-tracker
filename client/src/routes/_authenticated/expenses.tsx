@@ -22,7 +22,7 @@ async function getAllExpenses() {
   return data
 }
 
-export const Route = createFileRoute("/expenses")({
+export const Route = createFileRoute("/_authenticated/expenses")({
   component: Expenses,
 });
 

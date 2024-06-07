@@ -1,23 +1,27 @@
-import { createFileRoute } from '@tanstack/react-router'
-import React from "react";
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from '@/components/ui/button';
 import { useForm } from "@tanstack/react-form";
-import type { FieldApi } from "@tanstack/react-form";
+import { api } from '@/lib/api';
 
-export const Route = createFileRoute("/create-expense")({
+export const Route = createFileRoute("/_authenticated/create-expense")({
   component: CreateExpense,
 });
 
 function CreateExpense() {
+  const navigate = useNavigate()
   const form = useForm({
     defaultValues: {
       title: "",
       amount: 0,
     },
     onSubmit: async ({ value }) => {
-      console.log(value);
+      const res = await api.expenses.$post({json: value})
+      if (!res.ok) {
+        throw new Error('Failed to create expense. Server error!!')
+      }
+      navigate({to: "/expenses"})
     },
   });
   return (
