@@ -43,7 +43,7 @@ jobs:
         with:
           fetch-depth: 0 
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@main
+        uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
         with:
@@ -52,4 +52,3 @@ jobs:
             -Dsonar.organization=sarikamahboob
             -Dsonar.projectKey=expense-tracker
             -Dsonar.sources=.
-            -Dsonar.branch.name=${{ github.ref_name }}
