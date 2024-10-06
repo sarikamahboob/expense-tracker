@@ -47,6 +47,9 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
         with:
+          projectBaseDir: . 
           args: >
+            -X
             -Dsonar.organization=sarikamahboob
             -Dsonar.projectKey=expense_tracker
+            -Dsonar.sources=.
