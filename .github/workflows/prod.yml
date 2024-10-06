@@ -49,7 +49,6 @@ jobs:
         with:
           projectBaseDir: ./ 
           args: >
-            -X # Enable debug mode
             -Dsonar.organization=sarikamahboob
             -Dsonar.projectKey=expense_tracker
             -Dsonar.sources=.
