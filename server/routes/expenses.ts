@@ -1,6 +1,5 @@
 import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
-import { z } from "zod";
 import { getUser } from "../kinde";
 import { db } from "../db";
 import { expenses as expenseTable, insertExpensesSchema} from "../db/schema/expenses";

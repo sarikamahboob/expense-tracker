@@ -99,7 +99,7 @@ function Expenses() {
   );
 }
 
-function ExpenseDeleteButton({ id }: { id: number }) {
+function ExpenseDeleteButton({ id }: Readonly<{ id: number }>) {
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: deleteExpense,
