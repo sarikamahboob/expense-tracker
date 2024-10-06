@@ -50,4 +50,3 @@ jobs:
           args: >
             -Dsonar.organization=sarikamahboob
             -Dsonar.projectKey=expense_tracker
-            -Dsonar.sources=.
