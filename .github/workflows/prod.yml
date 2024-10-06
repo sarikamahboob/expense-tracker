@@ -50,7 +50,6 @@ jobs:
           projectBaseDir: ./ 
           args: >
             -Dsonar.organization=sarikamahboob
-            -Dsonar.projectKey=expense-tracker
+            -Dsonar.projectKey=sarikamahboob_expense-tracker
             -Dsonar.sources=.
             -Dsonar.language=js
-            -Dsonar.branch.name=${{ github.ref_name }}
